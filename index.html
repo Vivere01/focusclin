@@ -21,22 +21,25 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="nav-empty-left"></div>
-            
-            <div class="nav-center-group">
+            <div class="nav-left-group">
                 <a href="#" class="logo">
-                    <img src="assets/logo da focusclin.png" alt="FocusClin Odontologia Avançada" class="logo-img">
+                    <img src="assets/logo da focusclin.png" alt="Dr. Igor Mendes" class="logo-img">
+                    <span class="logo-subtitle">ODONTOLOGIA DE EXCELÊNCIA</span>
                 </a>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#sobre">Dr. Igor Mendes</a></li>
-                    <li><a href="#transformacoes">Transformações</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
             </div>
             
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Dr. Igor Mendes</a></li>
+                <li><a href="#servicos">Tratamentos</a></li>
+                <li><a href="#transformacoes">Transformações</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            
             <div class="nav-right-group">
-                <a href="https://wa.me/5522992451097" class="btn-primary" target="_blank">Agendar Avaliação</a>
+                <a href="https://wa.me/5522992451097" class="btn-primary btn-calendar" target="_blank">
+                    <i class="fa-regular fa-calendar"></i> AGENDAR AVALIAÇÃO
+                </a>
             </div>
             
             <div class="hamburger">
@@ -49,17 +52,81 @@
     <section id="inicio" class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <h1 class="hero-title">Seu sorriso não muda apenas a sua estética, também transforma sua confiança e autoestima!</h1>
-            <p class="hero-subtitle">Especialistas em Implantes Dentários e Facetas de Porcelana. Transforme sua autoestima com alta tecnologia e atendimento exclusivo.</p>
-            <a href="#transformacoes" class="btn-primary btn-large">Ver Transformações</a>
+            <div class="hero-kicker">
+                <span class="kicker-tag">ODONTOLOGIA PREMIUM</span>
+                <span class="kicker-line"></span>
+            </div>
             
-            <div class="hero-badges">
-                <span class="hero-badge">
-                    <i class="fa-solid fa-award"></i> 15+ Anos de Excelência
-                </span>
-                <span class="hero-badge">
-                    <i class="fa-solid fa-laptop-medical"></i> Tecnologia Avançada
-                </span>
+            <h1 class="hero-title">Seu sorriso transforma sua vida e sua confiança.</h1>
+            <p class="hero-subtitle">Especialistas em Implantes Dentários e Facetas de Porcelana com tecnologia de ponta e atendimento exclusivo para resultados naturais e duradouros.</p>
+            
+            <div class="hero-cta-buttons">
+                <a href="#sobre" class="btn-primary btn-large btn-gold-arrow">
+                    CONHECER TRATAMENTOS <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+                <a href="#transformacoes" class="btn-outline btn-large btn-play">
+                    <span class="play-icon"><i class="fa-solid fa-play"></i></span> VER TRANSFORMAÇÕES
+                </a>
+            </div>
+            
+            <div class="hero-trust-banner">
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="trust-text">
+                        <h4>15+</h4>
+                        <p>Anos de Excelência</p>
+                    </div>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-microscope"></i></div>
+                    <div class="trust-text">
+                        <h4>Tecnologia</h4>
+                        <p>de Ponta</p>
+                    </div>
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                    <div class="trust-text">
+                        <h4>Atendimento</h4>
+                        <p>Personalizado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Bottom Info Bar -->
+    <section class="hero-bottom-bar">
+        <div class="container bottom-bar-grid">
+            <div class="bottom-bar-item">
+                <div class="bottom-bar-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                <div class="bottom-bar-text">
+                    <h4>Implantes Dentários</h4>
+                    <p>Soluções seguras e duradouras para recuperar seu sorriso.</p>
+                </div>
+            </div>
+            <div class="bottom-bar-item">
+                <div class="bottom-bar-icon"><i class="fa-solid fa-teeth"></i></div>
+                <div class="bottom-bar-text">
+                    <h4>Facetas de Porcelana</h4>
+                    <p>Sorriso harmônico, natural e com acabamento impecável.</p>
+                </div>
+            </div>
+            <div class="bottom-bar-item">
+                <div class="bottom-bar-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <div class="bottom-bar-text">
+                    <h4>Estética Avançada</h4>
+                    <p>Procedimentos modernos para realçar a beleza do seu sorriso.</p>
+                </div>
+            </div>
+            <div class="bottom-bar-item">
+                <div class="bottom-bar-icon"><i class="fa-solid fa-hospital-user"></i></div>
+                <div class="bottom-bar-text">
+                    <h4>Segurança e Conforto</h4>
+                    <p>Ambiente acolhedor, tecnologia de ponta e máxima segurança.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -155,7 +222,7 @@
     </section>
 
     <!-- Services Banner -->
-    <section class="services-banner">
+    <section id="servicos" class="services-banner">
         <div class="container services-grid">
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-tooth"></i></div>
