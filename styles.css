@@ -400,21 +400,34 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .hero-bottom-bar {
     background-color: #0F1626; /* Deep clinical navy */
-    padding: 30px 0;
+    padding: 25px 0;
     position: relative;
     z-index: 5;
+    overflow: hidden;
 }
 
-.bottom-bar-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.bottom-bar-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 24s linear infinite;
+}
+
+.bottom-bar-track:hover {
+    animation-play-state: paused;
 }
 
 .bottom-bar-item {
+    flex: 0 0 290px;
     display: flex;
     align-items: flex-start;
     gap: 15px;
+    margin-right: 60px;
 }
 
 .bottom-bar-icon {
@@ -436,6 +449,15 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.75rem;
     color: #A0AEC0;
     line-height: 1.5;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 /* ==========================================================================
    About Section
@@ -825,11 +847,6 @@ h1, h2, h3, h4, h5, h6 {
     .hero-title {
         font-size: 2.8rem;
     }
-    
-    .bottom-bar-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -907,11 +924,6 @@ h1, h2, h3, h4, h5, h6 {
     
     .trust-divider {
         display: none;
-    }
-    
-    .bottom-bar-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
     }
     
     .carousel-track {
