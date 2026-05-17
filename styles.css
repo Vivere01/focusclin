@@ -234,18 +234,21 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     position: relative;
-    background: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1920') no-repeat center right;
-    background-size: cover;
+    background-color: #FDFBF5; /* Solid premium off-white/beige background */
     padding-top: 140px;
+    overflow: hidden;
 }
 
 .hero-overlay {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: 53%; /* Only covers the right side on desktop */
     height: 100%;
-    background: radial-gradient(circle at 80% 50%, rgba(253, 251, 245, 0.1) 0%, rgba(253, 251, 245, 0.75) 45%, rgba(253, 251, 245, 0.98) 75%, rgba(253, 251, 245, 1) 100%);
+    background: linear-gradient(to right, #FDFBF5 0%, rgba(253, 251, 245, 0.95) 8%, rgba(253, 251, 245, 0.8) 20%, rgba(253, 251, 245, 0) 65%),
+                url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1920') no-repeat center right;
+    background-size: cover;
+    z-index: 0;
 }
 
 .hero-content {
@@ -841,7 +844,16 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .hero {
-        background-position: right 30% center;
+        background: none;
+        background-color: #FDFBF5;
+    }
+    
+    .hero-overlay {
+        width: 100%;
+        left: 0;
+        background: linear-gradient(to bottom, rgba(253, 251, 245, 0.96) 0%, rgba(253, 251, 245, 0.85) 60%, rgba(253, 251, 245, 0.96) 100%),
+                    url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1920') no-repeat center right;
+        background-size: cover;
     }
     
     .hero-title {
@@ -889,11 +901,7 @@ h1, h2, h3, h4, h5, h6 {
         padding-top: 140px;
         padding-bottom: 50px;
         align-items: flex-start;
-        background-position: right 25% center;
-    }
-    
-    .hero-overlay {
-        background: linear-gradient(to bottom, rgba(253, 251, 245, 0.96) 0%, rgba(253, 251, 245, 0.85) 60%, rgba(253, 251, 245, 0.96) 100%);
+        background: none;
     }
 
     .hero-title {
