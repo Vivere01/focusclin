@@ -21,18 +21,23 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">
-                <!-- Fallback text logo if image is not available, but user should place logo.png in assets -->
-                <img src="assets/logo da focusclin.png" alt="FocusClin Odontologia Avançada" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span class="logo-text" style="display: none;">FocusClin</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Dr. Igor Mendes</a></li>
-                <li><a href="#transformacoes">Transformações</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-            <a href="https://wa.me/5522992451097" class="btn-primary" target="_blank">Agendar Avaliação</a>
+            <div class="nav-empty-left"></div>
+            
+            <div class="nav-center-group">
+                <a href="#" class="logo">
+                    <img src="assets/logo da focusclin.png" alt="FocusClin Odontologia Avançada" class="logo-img">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Dr. Igor Mendes</a></li>
+                    <li><a href="#transformacoes">Transformações</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-right-group">
+                <a href="https://wa.me/5522992451097" class="btn-primary" target="_blank">Agendar Avaliação</a>
+            </div>
             
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
@@ -44,9 +49,18 @@
     <section id="inicio" class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <h1 class="hero-title">A Arte do Sorriso Perfeito</h1>
+            <h1 class="hero-title">Seu sorriso não muda apenas a sua estética, também transforma sua confiança e autoestima!</h1>
             <p class="hero-subtitle">Especialistas em Implantes Dentários e Facetas de Porcelana. Transforme sua autoestima com alta tecnologia e atendimento exclusivo.</p>
             <a href="#transformacoes" class="btn-primary btn-large">Ver Transformações</a>
+            
+            <div class="hero-badges">
+                <span class="hero-badge">
+                    <i class="fa-solid fa-award"></i> 15+ Anos de Excelência
+                </span>
+                <span class="hero-badge">
+                    <i class="fa-solid fa-laptop-medical"></i> Tecnologia Avançada
+                </span>
+            </div>
         </div>
     </section>
 

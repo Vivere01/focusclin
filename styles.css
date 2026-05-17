@@ -112,62 +112,68 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1rem;
 }
 
-/* ==========================================================================
-   Navbar
-   ========================================================================== */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     z-index: 1000;
     padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
     transition: var(--transition);
 }
 
 .nav-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
+    width: 100%;
+}
+
+.nav-empty-left {
+    display: block;
+}
+
+.nav-center-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 
 .logo {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .logo-img {
-    height: 50px;
-}
-
-.logo-text {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    color: var(--gold);
-    font-weight: 700;
+    height: 70px;
+    transition: var(--transition);
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 35px;
 }
 
 .nav-links a {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--dark-grey);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gold-dark);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     position: relative;
+    padding-bottom: 4px;
 }
 
 .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
@@ -181,6 +187,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-links a:hover {
     color: var(--gold);
+}
+
+.nav-right-group {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .hamburger {
@@ -198,11 +209,9 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     position: relative;
-    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.65)), url('https://images.unsplash.com/photo-1579684389782-64d84b5e901f?auto=format&fit=crop&q=80&w=1920');
+    background: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1920') no-repeat center right;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding-top: 80px;
+    padding-top: 100px;
 }
 
 .hero-overlay {
@@ -211,28 +220,52 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 60%, rgba(212, 175, 55, 0.1) 100%);
+    background: radial-gradient(circle at 80% 50%, rgba(253, 251, 245, 0.1) 0%, rgba(253, 251, 245, 0.75) 45%, rgba(253, 251, 245, 0.98) 75%, rgba(253, 251, 245, 1) 100%);
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 600px;
+    max-width: 680px;
+    padding-left: 20px;
 }
 
 .hero-title {
-    font-size: 4rem;
-    line-height: 1.1;
+    font-size: 3.2rem;
+    line-height: 1.2;
     margin-bottom: 20px;
     color: var(--dark);
+    font-family: var(--font-heading);
+    font-weight: 600;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
     color: #444;
 }
 
+.hero-badges {
+    display: flex;
+    gap: 30px;
+    margin-top: 35px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--dark-grey);
+}
+
+.hero-badge i {
+    color: var(--gold-dark);
+    font-size: 1.2rem;
+}
 /* ==========================================================================
    About Section
    ========================================================================== */
@@ -589,8 +622,28 @@ h1, h2, h3, h4, h5, h6 {
    Responsive Design
    ========================================================================== */
 @media (max-width: 992px) {
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-empty-left {
+        display: none;
+    }
+    
+    .nav-center-group {
+        flex-direction: row;
+        gap: 0;
+    }
+    
+    .logo-img {
+        height: 55px;
+    }
+
     .about-container {
         flex-direction: column;
+        gap: 40px;
     }
     
     .services-grid {
@@ -598,26 +651,34 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.8rem;
+    }
+    
+    .hero {
+        background-position: right 30% center;
     }
 }
 
 @media (max-width: 768px) {
     .hamburger {
         display: block;
+        z-index: 1001;
     }
     
     .nav-links {
         position: fixed;
-        top: 80px;
+        top: 0;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 80px);
-        background: var(--white);
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 30px;
         transition: var(--transition);
+        z-index: 1000;
     }
     
     .nav-links.active {
@@ -633,8 +694,23 @@ h1, h2, h3, h4, h5, h6 {
         gap: 30px;
     }
     
+    .hero {
+        padding-top: 140px;
+        align-items: flex-start;
+        background-position: right 25% center;
+    }
+    
+    .hero-overlay {
+        background: linear-gradient(to bottom, rgba(253, 251, 245, 0.95) 0%, rgba(253, 251, 245, 0.85) 60%, rgba(253, 251, 245, 0.95) 100%);
+    }
+
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+    
+    .hero-badges {
+        flex-direction: column;
+        gap: 15px;
     }
     
     .carousel-track {
