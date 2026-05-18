@@ -1003,3 +1003,154 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.2);
 }
 
+/* ==========================================================================
+   Location & Reviews Section
+   ========================================================================== */
+.location-reviews {
+    padding: 100px 0;
+    background-color: var(--light-grey);
+}
+
+.location-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.reviews-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.google-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--white);
+    padding: 8px 16px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.google-badge .g-logo {
+    height: 24px;
+}
+
+.google-badge span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+}
+
+.stars-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.rating-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1;
+}
+
+.stars {
+    color: #FFB400; /* Google Star Color */
+    font-size: 1.2rem;
+    display: flex;
+    gap: 4px;
+}
+
+.reviews-description {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+}
+
+.patient-reviews {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.review-item {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.reviewer-avatar {
+    width: 45px;
+    height: 45px;
+    background-color: var(--gold);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.reviewer-info strong {
+    display: block;
+    color: var(--dark);
+    font-size: 1.05rem;
+}
+
+.reviewer-info span {
+    color: #FFB400;
+    font-size: 0.8rem;
+}
+
+.review-item p {
+    color: #555;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.map-container {
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.map-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 4px solid var(--white);
+    border-radius: 12px;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+@media (max-width: 992px) {
+    .location-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .map-container {
+        height: 350px;
+    }
+}
+
