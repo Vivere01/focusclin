@@ -215,13 +215,13 @@
                 <div class="comparison-slider">
                     <!-- DEPOIS (Fundo / Perfect Smile) -->
                     <div class="image-after-pane">
-                        <img src="https://images.unsplash.com/photo-1601412436009-d964bd02edbc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Depois - Sorriso perfeito com facetas de resina brancas">
+                        <img src="assets/antes-depois-dentes.png" alt="Depois - Sorriso perfeito com facetas de resina brancas">
                         <span class="badge-smile badge-after">DEPOIS (FACETAS)</span>
                     </div>
                     
                     <!-- ANTES (Sobreposto / Imperfect Smile) -->
                     <div class="image-before-pane">
-                        <img src="https://images.unsplash.com/photo-1601412436009-d964bd02edbc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Antes - Sorriso amarelado e desalinhado" class="before-img-filter">
+                        <img src="assets/antes-depois-dentes.png" alt="Antes - Sorriso amarelado e desalinhado" class="before-img-filter">
                         <span class="badge-smile badge-before">ANTES</span>
                     </div>
                     
@@ -247,141 +247,7 @@
         </div>
     </section>
 
-    <!-- Section: Tecnologia e Estética Avançada (Simulator) -->
-    <section id="tecnologia" class="tech-section">
-        <div class="container tech-container">
-            <div class="tech-info">
-                <h2 class="section-title">Tecnologia FocusClin</h2>
-                <h3 class="section-subtitle">Simulador de Alinhamento & Estética</h3>
-                <p class="tech-description">Experimente em tempo real as inovações que transformam a FocusClin em referência. Utilize os controles do simulador para visualizar o impacto do Invisalign e das Facetas de Resina na estrutura do seu sorriso.</p>
-                
-                <div class="tech-features-list">
-                    <div class="tech-feature-item">
-                        <div class="feat-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                        <div class="feat-text">
-                            <h4>Facetas de Resina Premium</h4>
-                            <p>Contorno harmônico e acabamento polido, corrigindo manchas e espaçamentos com precisão artística.</p>
-                        </div>
-                    </div>
-                    <div class="tech-feature-item">
-                        <div class="feat-icon"><i class="fa-solid fa-teeth-open"></i></div>
-                        <div class="feat-text">
-                            <h4>Invisalign (Alinhadores Invisíveis)</h4>
-                            <p>Tecnologia computacional 3D que move seus dentes gradualmente com conforto e total invisibilidade.</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="simulator-controls">
-                    <button class="btn-simulator toggle-bite" id="btn-bite">
-                        <i class="fa-solid fa-teeth"></i> ABRIR / FECHAR
-                    </button>
-                    <button class="btn-simulator toggle-invisalign" id="btn-invisalign">
-                        <i class="fa-solid fa-eye"></i> INVISALIGN
-                    </button>
-                    <button class="btn-simulator toggle-veneers" id="btn-veneers">
-                        <i class="fa-solid fa-sparkles"></i> SIMULAR FACETAS
-                    </button>
-                </div>
-            </div>
-            
-            <div class="tech-visual">
-                <div class="simulator-card">
-                    <div class="simulator-header">
-                        <span class="status-dot green"></span>
-                        <span class="simulator-title">FOCUSCLIN SMILE SIMULATOR v1.0</span>
-                    </div>
-                    
-                    <div class="simulator-display">
-                        <!-- SVG Arcada Dentária Interativa -->
-                        <svg class="arch-simulator-svg" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="gum-grad" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stop-color="#F9D2D2"/>
-                                    <stop offset="100%" stop-color="#EAA6A6"/>
-                                </linearGradient>
-                                <linearGradient id="tooth-nat" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stop-color="#FFFFFF"/>
-                                    <stop offset="60%" stop-color="#FFFDEC"/>
-                                    <stop offset="100%" stop-color="#F2E6BF"/>
-                                </linearGradient>
-                                <linearGradient id="tooth-ven" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stop-color="#FFFFFF"/>
-                                    <stop offset="30%" stop-color="#F8FAFC"/>
-                                    <stop offset="100%" stop-color="#EAF2F9"/>
-                                </linearGradient>
-                                <filter id="glow-effect" x="-20%" y="-20%" width="140%" height="140%">
-                                    <feGaussianBlur stdDeviation="4" result="blur"/>
-                                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-                                </filter>
-                            </defs>
-
-                            <!-- UPPER JAW -->
-                            <g class="jaw-upper">
-                                <!-- Gums Upper -->
-                                <path d="M 60,110 C 60,30 340,30 340,110 C 340,95 320,80 200,80 C 80,80 60,95 60,110 Z" fill="url(#gum-grad)" opacity="0.9"/>
-                                
-                                <!-- Teeth Upper (Nominal Center X: 200) -->
-                                <!-- L. Premolar -->
-                                <path class="tooth t-up-1 natural-crooked-1" d="M 85,108 C 80,105 85,92 95,95 C 102,97 100,108 85,108 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-                                <!-- L. Canine -->
-                                <path class="tooth t-up-2 natural-crooked-2" d="M 103,113 C 98,108 103,94 115,97 C 122,99 120,113 103,113 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-                                <!-- L. Lateral -->
-                                <path class="tooth t-up-3 natural-crooked-3" d="M 122,118 C 117,113 125,97 140,100 C 145,101 142,118 122,118 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-                                <!-- L. Central -->
-                                <path class="tooth t-up-4 natural-crooked-4" d="M 147,123 C 143,118 152,99 172,101 C 176,102 173,123 147,123 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1.2"/>
-                                
-                                <!-- R. Central -->
-                                <path class="tooth t-up-5 natural-crooked-5" d="M 253,123 C 257,118 248,99 228,101 C 224,102 227,123 253,123 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1.2"/>
-                                <!-- R. Lateral -->
-                                <path class="tooth t-up-6 natural-crooked-6" d="M 278,118 C 283,113 275,97 260,100 C 255,101 258,118 278,118 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-                                <!-- R. Canine -->
-                                <path class="tooth t-up-7 natural-crooked-7" d="M 297,113 C 302,108 297,94 285,97 C 278,99 280,113 297,113 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-                                <!-- R. Premolar -->
-                                <path class="tooth t-up-8 natural-crooked-8" d="M 315,108 C 320,105 315,92 305,95 C 298,97 300,108 315,108 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-
-                                <!-- Aligner Upper -->
-                                <path class="aligner-tray aligner-up" d="M 75,105 C 75,25 325,25 325,105" fill="none" stroke="rgba(0, 210, 255, 0.8)" stroke-width="5" stroke-linecap="round" filter="url(#glow-effect)"/>
-                            </g>
-
-                            <!-- LOWER JAW -->
-                            <g class="jaw-lower">
-                                <!-- Gums Lower -->
-                                <path d="M 60,190 C 60,270 340,270 340,190 C 340,205 320,220 200,220 C 80,220 60,205 60,190 Z" fill="url(#gum-grad)" opacity="0.9"/>
-
-                                <!-- Teeth Lower -->
-                                <!-- L. Premolar -->
-                                <path class="tooth t-low-1 natural-crooked-9" d="M 85,192 C 80,195 85,208 95,205 C 102,203 100,192 85,192 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-                                <!-- L. Canine -->
-                                <path class="tooth t-low-2 natural-crooked-10" d="M 103,187 C 98,192 103,206 115,203 C 122,201 120,187 103,187 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-                                <!-- L. Lateral -->
-                                <path class="tooth t-low-3 natural-crooked-11" d="M 122,182 C 117,187 125,203 140,200 C 145,199 142,182 122,182 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-                                <!-- L. Central -->
-                                <path class="tooth t-low-4 natural-crooked-12" d="M 147,177 C 143,182 152,201 172,199 C 176,198 173,177 147,177 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-                                
-                                <!-- R. Central -->
-                                <path class="tooth t-low-5 natural-crooked-13" d="M 253,177 C 257,182 248,201 228,199 C 224,198 227,177 253,177 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-                                <!-- R. Lateral -->
-                                <path class="tooth t-low-6 natural-crooked-14" d="M 278,182 C 283,187 275,203 260,200 C 255,199 258,182 278,182 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-                                <!-- R. Canine -->
-                                <path class="tooth t-low-7 natural-crooked-15" d="M 297,187 C 302,192 297,206 285,203 C 278,201 280,187 297,187 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-                                <!-- R. Premolar -->
-                                <path class="tooth t-low-8 natural-crooked-16" d="M 315,192 C 320,195 315,208 305,205 C 298,203 300,192 315,192 Z" fill="url(#tooth-nat)" stroke="rgba(212,175,55,0.4)" stroke-width="1"/>
-
-                                <!-- Aligner Lower -->
-                                <path class="aligner-tray aligner-down" d="M 75,195 C 75,275 325,275 325,195" fill="none" stroke="rgba(0, 210, 255, 0.8)" stroke-width="5" stroke-linecap="round" filter="url(#glow-effect)"/>
-                            </g>
-                        </svg>
-                    </div>
-                    
-                    <div class="simulator-footer">
-                        <span>ESTADO: <strong id="sim-state" style="color: var(--gold);">NATURAL</strong></span>
-                        <span>MODO: <strong id="sim-mode">RELAXADO</strong></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Transformations / Carousel Section -->
     <section id="transformacoes" class="transformations">
