@@ -120,4 +120,130 @@ document.addEventListener('DOMContentLoaded', () => {
     if (slides.length > 0) {
         startAutoSlide();
     }
+
+    // --- Before & After Interactive Slider ---
+    const comparisonSlider = document.querySelector('.comparison-slider');
+    if (comparisonSlider) {
+        const sliderControl = comparisonSlider.querySelector('.slider-control');
+        const beforePane = comparisonSlider.querySelector('.image-before-pane');
+        const divider = comparisonSlider.querySelector('.slider-divider');
+
+        const updateSlider = (val) => {
+            beforePane.style.width = `${val}%`;
+            divider.style.left = `${val}%`;
+        };
+
+        // Initialize slider at 50%
+        updateSlider(50);
+
+        sliderControl.addEventListener('input', (e) => {
+            updateSlider(e.target.value);
+        });
+    }
+
+    // --- Smile Simulator Logic ---
+    const archSvg = document.querySelector('.arch-simulator-svg');
+    const btnBite = document.getElementById('btn-bite');
+    const btnInvisalign = document.getElementById('btn-invisalign');
+    const btnVeneers = document.getElementById('btn-veneers');
+    const simState = document.getElementById('sim-state');
+    const simMode = document.getElementById('sim-mode');
+
+    if (archSvg) {
+        let isBiteOpen = false;
+        let isInvisalignActive = false;
+        let isVeneersActive = false;
+        let idleInterval;
+
+        // Reset/Clear Idle Interval on User Action
+        const resetIdleTimer = () => {
+            if (idleInterval) {
+                clearInterval(idleInterval);
+                idleInterval = null;
+            }
+        };
+
+        // Bite open/close action
+        const toggleBite = () => {
+            resetIdleTimer();
+            isBiteOpen = !isBiteOpen;
+            if (isBiteOpen) {
+                archSvg.classList.add('bite-open');
+                btnBite.classList.add('active');
+                simMode.textContent = 'ABERTO';
+                simMode.style.color = 'var(--gold-light)';
+            } else {
+                archSvg.classList.remove('bite-open');
+                btnBite.classList.remove('active');
+                simMode.textContent = 'RELAXADO';
+                simMode.style.color = '';
+            }
+        };
+
+        btnBite.addEventListener('click', toggleBite);
+
+        // Invisalign Treatment Simulation
+        btnInvisalign.addEventListener('click', () => {
+            resetIdleTimer();
+            isInvisalignActive = !isInvisalignActive;
+            
+            // Deactivate Veneers if we activate Invisalign
+            if (isInvisalignActive) {
+                isVeneersActive = false;
+                btnVeneers.classList.remove('active');
+                archSvg.classList.remove('veneers-active');
+                
+                archSvg.classList.add('aligner-active');
+                archSvg.classList.add('straightened');
+                btnInvisalign.classList.add('active');
+                simState.textContent = 'INVISALIGN';
+                simState.style.color = '#00D2FF'; // Invisalign cyan
+            } else {
+                archSvg.classList.remove('aligner-active');
+                archSvg.classList.remove('straightened');
+                btnInvisalign.classList.remove('active');
+                simState.textContent = 'NATURAL';
+                simState.style.color = 'var(--gold)';
+            }
+        });
+
+        // Veneers Treatment Simulation
+        btnVeneers.addEventListener('click', () => {
+            resetIdleTimer();
+            isVeneersActive = !isVeneersActive;
+
+            // Deactivate Invisalign if we activate Veneers
+            if (isVeneersActive) {
+                isInvisalignActive = false;
+                btnInvisalign.classList.remove('active');
+                archSvg.classList.remove('aligner-active');
+                
+                archSvg.classList.add('veneers-active');
+                archSvg.classList.add('straightened');
+                btnVeneers.classList.add('active');
+                simState.textContent = 'FACETAS';
+                simState.style.color = '#FFF'; // Bright white
+            } else {
+                archSvg.classList.remove('veneers-active');
+                archSvg.classList.remove('straightened');
+                btnVeneers.classList.remove('active');
+                simState.textContent = 'NATURAL';
+                simState.style.color = 'var(--gold)';
+            }
+        });
+
+        // Subtle idle animation - Gentle breathing of dental arches if user is inactive
+        let idleTick = 0;
+        idleInterval = setInterval(() => {
+            idleTick++;
+            // Slowly open and close jaws every few seconds if user hasn't clicked
+            if (idleTick % 2 === 1) {
+                archSvg.classList.add('bite-open');
+                simMode.textContent = 'SIMULAÇÃO';
+            } else {
+                archSvg.classList.remove('bite-open');
+                simMode.textContent = 'RELAXADO';
+            }
+        }, 5000);
+    }
 });

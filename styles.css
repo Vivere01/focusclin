@@ -1154,3 +1154,518 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* ==========================================================================
+   Hero Micro SVG & Subtle Pulsing
+   ========================================================================== */
+.micro-arch-svg {
+    margin-right: 12px;
+    vertical-align: middle;
+    transition: var(--transition);
+}
+
+.micro-arch-svg .upper-micro {
+    animation: micro-bite-upper 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    transform-origin: center top;
+}
+
+.micro-arch-svg .lower-micro {
+    animation: micro-bite-lower 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    transform-origin: center bottom;
+}
+
+.micro-arch-svg .micro-tooth {
+    animation: micro-teeth-glow 3.5s ease-in-out infinite;
+}
+
+@keyframes micro-bite-upper {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-1.2px); }
+}
+
+@keyframes micro-bite-lower {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(1.2px); }
+}
+
+@keyframes micro-teeth-glow {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; fill: var(--gold-light); }
+}
+
+/* ==========================================================================
+   Antes e Depois Section
+   ========================================================================== */
+.before-after-section {
+    padding: 100px 0;
+    background-color: var(--white);
+    position: relative;
+}
+
+.comparison-slider-wrapper {
+    max-width: 800px;
+    margin: 40px auto 30px;
+    padding: 0 10px;
+}
+
+.comparison-slider {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+    background-color: var(--light-grey);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.image-after-pane, .image-before-pane {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    pointer-events: none;
+}
+
+.image-after-pane img, .image-before-pane img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-before-pane {
+    width: 50%; /* Controlled dynamically by input range */
+    overflow: hidden;
+    z-index: 2;
+}
+
+/* Targeted imperfect filter for ANTES */
+.before-img-filter {
+    filter: sepia(0.65) saturate(1.3) hue-rotate(-22deg) contrast(0.92) brightness(0.92);
+}
+
+.badge-smile {
+    position: absolute;
+    bottom: 20px;
+    padding: 8px 16px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    border-radius: 4px;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.badge-after {
+    right: 20px;
+    background-color: rgba(212, 175, 55, 0.9);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.badge-before {
+    left: 20px;
+    background-color: rgba(17, 17, 17, 0.75);
+    color: #E2A5A5;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.slider-divider {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Controlled dynamically */
+    width: 2px;
+    height: 100%;
+    background-color: var(--gold);
+    z-index: 3;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+}
+
+.divider-line {
+    height: 50%;
+    width: 100%;
+    background-color: var(--gold);
+}
+
+.divider-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    background-color: var(--white);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-dark);
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.comparison-slider:hover .divider-handle {
+    transform: translate(-50%, -50%) scale(1.1);
+    background-color: var(--gold);
+    color: var(--white);
+}
+
+.slider-control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: ew-resize;
+    z-index: 4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.slider-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 480px;
+}
+
+.slider-control::-moz-range-thumb {
+    width: 40px;
+    height: 480px;
+    cursor: ew-resize;
+}
+
+.before-after-cta {
+    margin-top: 40px;
+}
+
+.btn-mude-sorriso {
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+    transform: scale(1);
+    transition: var(--transition);
+}
+
+.btn-mude-sorriso:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+}
+
+/* ==========================================================================
+   Tecnologia e Estética Avançada Section
+   ========================================================================== */
+.tech-section {
+    padding: 100px 0;
+    background-color: #FAF8F2; /* Cream/light gold background */
+    border-top: 1px solid rgba(212, 175, 55, 0.05);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.05);
+}
+
+.tech-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tech-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-description {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+
+.tech-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.tech-feature-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.feat-icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--white);
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.05);
+}
+
+.feat-text h4 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: #162238;
+}
+
+.feat-text p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.simulator-controls {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-simulator {
+    background-color: var(--white);
+    color: var(--dark-grey);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.btn-simulator:hover {
+    border-color: var(--gold);
+    color: var(--gold-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.1);
+}
+
+.btn-simulator.active {
+    background-color: var(--gold);
+    color: var(--white);
+    border-color: var(--gold);
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.25);
+}
+
+/* Simulator Visual Display Card */
+.simulator-card {
+    background-color: #121824; /* Dark medical diagnostic screen appearance */
+    border-radius: 16px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.simulator-header {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-dot.green {
+    background-color: #00E676;
+    box-shadow: 0 0 10px #00E676;
+    animation: status-pulse 2s infinite;
+}
+
+@keyframes status-pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+.simulator-title {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
+}
+
+.simulator-display {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, #1E293B 0%, #0F172A 100%);
+    min-height: 350px;
+}
+
+.simulator-footer {
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 12px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* SVG Interactive tooth movements */
+.arch-simulator-svg {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+}
+
+.arch-simulator-svg .jaw-upper {
+    transform: translateY(0px);
+    transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.arch-simulator-svg .jaw-lower {
+    transform: translateY(0px);
+    transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Class added by JS to open the jaws */
+.arch-simulator-svg.bite-open .jaw-upper {
+    transform: translateY(-22px);
+}
+
+.arch-simulator-svg.bite-open .jaw-lower {
+    transform: translateY(22px);
+}
+
+/* Tooth alignment transitions */
+.arch-simulator-svg .tooth {
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), fill 0.8s ease, stroke 0.8s ease, filter 0.8s ease;
+}
+
+/* Invisalign Aligners (hidden by default) */
+.arch-simulator-svg .aligner-tray {
+    opacity: 0;
+    transform: scale(0.98);
+    transform-origin: 200px 110px;
+    transition: opacity 0.8s ease, transform 0.8s ease, stroke-dashoffset 2s ease;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+}
+
+.arch-simulator-svg.aligner-active .aligner-tray {
+    opacity: 0.95;
+    transform: scale(1);
+    stroke-dashoffset: 0;
+    animation: aligner-glow-pulse 3s infinite alternate;
+}
+
+@keyframes aligner-glow-pulse {
+    0% { filter: drop-shadow(0 0 2px rgba(0, 210, 255, 0.4)); }
+    100% { filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.8)); }
+}
+
+/* Natural Crooked Teeth coordinates - BEFORE treatment */
+/* We simulate slightly crooked teeth in natural state using transforms */
+.arch-simulator-svg .natural-crooked-3 { transform: rotate(-3.5deg) translate(-2px, 3px); transform-origin: 131px 108px; }
+.arch-simulator-svg .natural-crooked-4 { transform: rotate(2.5deg) translate(0px, 1.5px); transform-origin: 159px 111px; }
+.arch-simulator-svg .natural-crooked-5 { transform: rotate(-3deg) translate(-1px, 2.5px); transform-origin: 240px 111px; }
+.arch-simulator-svg .natural-crooked-6 { transform: rotate(4.5deg) translate(2px, 3.5px); transform-origin: 269px 108px; }
+
+.arch-simulator-svg .natural-crooked-11 { transform: rotate(3deg) translate(0px, -2px); transform-origin: 131px 191px; }
+.arch-simulator-svg .natural-crooked-12 { transform: rotate(-2.5deg) translate(1.5px, -1.5px); transform-origin: 159px 188px; }
+.arch-simulator-svg .natural-crooked-13 { transform: rotate(3deg) translate(-1.5px, -1.5px); transform-origin: 240px 188px; }
+.arch-simulator-svg .natural-crooked-14 { transform: rotate(-4deg) translate(0px, -2px); transform-origin: 269px 191px; }
+
+/* Straightened Teeth - AFTER treatment (Active when veneers OR aligners are active) */
+.arch-simulator-svg.straightened .natural-crooked-1,
+.arch-simulator-svg.straightened .natural-crooked-2,
+.arch-simulator-svg.straightened .natural-crooked-3,
+.arch-simulator-svg.straightened .natural-crooked-4,
+.arch-simulator-svg.straightened .natural-crooked-5,
+.arch-simulator-svg.straightened .natural-crooked-6,
+.arch-simulator-svg.straightened .natural-crooked-7,
+.arch-simulator-svg.straightened .natural-crooked-8,
+.arch-simulator-svg.straightened .natural-crooked-9,
+.arch-simulator-svg.straightened .natural-crooked-10,
+.arch-simulator-svg.straightened .natural-crooked-11,
+.arch-simulator-svg.straightened .natural-crooked-12,
+.arch-simulator-svg.straightened .natural-crooked-13,
+.arch-simulator-svg.straightened .natural-crooked-14,
+.arch-simulator-svg.straightened .natural-crooked-15,
+.arch-simulator-svg.straightened .natural-crooked-16 {
+    transform: rotate(0deg) translate(0px, 0px) !important;
+}
+
+/* Veneers Gradient Fill state */
+.arch-simulator-svg.veneers-active .tooth {
+    fill: url(#tooth-ven) !important;
+    stroke: var(--gold) !important;
+    stroke-width: 1.2px;
+    filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.4));
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 992px) {
+    .tech-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .comparison-slider {
+        height: 380px;
+    }
+    .slider-control::-webkit-slider-thumb {
+        height: 380px;
+    }
+    .slider-control::-moz-range-thumb {
+        height: 380px;
+    }
+}
+
+@media (max-width: 600px) {
+    .comparison-slider {
+        height: 280px;
+    }
+    .slider-control::-webkit-slider-thumb {
+        height: 280px;
+    }
+    .slider-control::-moz-range-thumb {
+        height: 280px;
+    }
+    .badge-smile {
+        padding: 4px 10px;
+        font-size: 0.65rem;
+        bottom: 10px;
+    }
+    .badge-after { right: 10px; }
+    .badge-before { left: 10px; }
+    .divider-handle {
+        width: 36px;
+        height: 36px;
+        font-size: 0.8rem;
+    }
+    .btn-simulator {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
