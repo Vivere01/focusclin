@@ -234,7 +234,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     position: relative;
-    background-color: #0F1626; /* Dark blue background */
+    background-color: #FDFBF5; /* Solid premium off-white/beige background */
     padding-top: 140px;
     overflow: hidden;
 }
@@ -245,7 +245,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     width: 53%; /* Only covers the right side on desktop */
     height: 100%;
-    background: linear-gradient(to right, #0F1626 0%, rgba(15, 22, 38, 0.95) 8%, rgba(15, 22, 38, 0.8) 20%, rgba(15, 22, 38, 0) 65%),
+    background: linear-gradient(to right, #FDFBF5 0%, rgba(253, 251, 245, 0.95) 8%, rgba(253, 251, 245, 0.8) 20%, rgba(253, 251, 245, 0) 65%),
                 url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1920') no-repeat center right;
     background-size: cover;
     z-index: 0;
@@ -271,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
 .kicker-tag {
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--gold);
+    color: var(--gold-dark);
     letter-spacing: 2px;
 }
 
@@ -288,7 +288,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     font-weight: 400; /* Beautiful elegant editorial serif */
     letter-spacing: -0.5px;
-    color: var(--white);
+    color: #162238; /* Slate dark navy */
     opacity: 0;
     animation: fadeInUpReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: 0.2s;
@@ -298,7 +298,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.05rem;
     line-height: 1.6;
     margin-bottom: 35px;
-    color: rgba(255, 255, 255, 0.75);
+    color: #555;
     font-weight: 400;
     max-width: 620px;
     opacity: 0;
@@ -354,18 +354,16 @@ h1, h2, h3, h4, h5, h6 {
 .hero-trust-banner {
     display: inline-flex;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color: var(--white);
     padding: 18px 35px;
     border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
     margin-top: 45px;
     gap: 30px;
     opacity: 0;
     animation: fadeInUpReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     animation-delay: 0.65s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
 .trust-item {
@@ -383,13 +381,13 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-body);
     font-size: 0.95rem;
     font-weight: 700;
-    color: var(--white);
+    color: var(--dark);
     margin-bottom: 2px;
 }
 
 .trust-text p {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: #666;
     font-weight: 400;
     white-space: nowrap;
 }
@@ -397,7 +395,7 @@ h1, h2, h3, h4, h5, h6 {
 .trust-divider {
     width: 1px;
     height: 35px;
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(0, 0, 0, 0.08);
 }
 
 /* ==========================================================================
@@ -847,13 +845,13 @@ h1, h2, h3, h4, h5, h6 {
     
     .hero {
         background: none;
-        background-color: #0F1626;
+        background-color: #FDFBF5;
     }
     
     .hero-overlay {
         width: 100%;
         left: 0;
-        background: linear-gradient(to bottom, rgba(15, 22, 38, 0.96) 0%, rgba(15, 22, 38, 0.85) 60%, rgba(15, 22, 38, 0.96) 100%),
+        background: linear-gradient(to bottom, rgba(253, 251, 245, 0.96) 0%, rgba(253, 251, 245, 0.85) 60%, rgba(253, 251, 245, 0.96) 100%),
                     url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1920') no-repeat center right;
         background-size: cover;
     }
