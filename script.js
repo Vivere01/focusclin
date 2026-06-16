@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.backgroundColor = 'rgba(15, 22, 38, 0.98)';
             navbar.style.borderBottom = '1px solid rgba(212, 175, 55, 0.15)';
-            navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.03)';
+            navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.15)';
         } else {
-            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.96)';
+            navbar.style.backgroundColor = 'rgba(15, 22, 38, 0.95)';
             navbar.style.borderBottom = '1px solid rgba(212, 175, 55, 0.08)';
             navbar.style.boxShadow = 'none';
         }
