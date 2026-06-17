@@ -686,9 +686,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
     text-align: center;
+}
+
+@media (max-width: 1200px) and (min-width: 993px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
 }
 
 .service-card {
